@@ -1,0 +1,43 @@
+{
+  "name": "mongoose-rules",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./constants": {
+      "import": "./dist/constants/index.mjs",
+      "require": "./dist/constants/index.js",
+      "types": "./dist/constants/index.d.ts"
+    }
+  },
+  "scripts": {
+    "start": "tsup --watch",
+    "build": "tsup --clean true",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "lint": "eslint . --max-warnings=0 --ignore-path ../../.eslintignore",
+    "lint:fix": "eslint src --fix",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "ioredis": "4.28.5",
+    "mongoose": "^7.1.0",
+    "redlock": "4.2.0"
+  },
+  "devDependencies": {
+    "@types/redlock": "^4.0.4",
+    "@uniswap/eslint-config": "^1.2.0",
+    "prettier": "^3.1.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5",
+    "vitest": "^1.5.0"
+  }
+}
